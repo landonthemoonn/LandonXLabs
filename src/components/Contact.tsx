@@ -1,7 +1,16 @@
 import { Send } from "lucide-react";
 import { motion } from "motion/react";
+import { useState } from "react";
 
 export function Contact() {
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 3000);
+  };
+
   return (
     <section id="contact" className="py-24 px-4 bg-[#bbbcae]">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -18,7 +27,12 @@ export function Contact() {
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-[#1e1e1e] mb-1">Email</h3>
-                <p className="text-[#ababab]">hello@landonlabs.com</p>
+                <a 
+                  href="mailto:landon@landonlabs.com"
+                  className="text-[#ababab] hover:text-[#1e1e1e] transition-colors"
+                >
+                  landon@landonlabs.com
+                </a>
               </div>
             </div>
 
@@ -36,13 +50,14 @@ export function Contact() {
           </div>
         </div>
 
-        <form className="flex flex-col gap-6">
+        <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
           <div className="flex flex-col gap-2">
             <label className="text-[#1e1e1e] font-medium">Name</label>
             <input 
               type="text" 
               placeholder="Your name" 
               className="bg-white/50 border border-[#767676] rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-[#1e1e1e]/20"
+              required
             />
           </div>
           <div className="flex flex-col gap-2">
@@ -51,6 +66,7 @@ export function Contact() {
               type="email" 
               placeholder="your@email.com" 
               className="bg-white/50 border border-[#767676] rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-[#1e1e1e]/20"
+              required
             />
           </div>
           <div className="flex flex-col gap-2">
@@ -59,16 +75,35 @@ export function Contact() {
               rows={4}
               placeholder="Tell me about your project..." 
               className="bg-white/50 border border-[#767676] rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-[#1e1e1e]/20 resize-none"
+              required
             />
           </div>
           
           <motion.button
+            type="submit"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="bg-[#2c2c2c] text-white rounded-xl p-4 font-medium flex items-center justify-center gap-2 mt-4"
+            className={`rounded-xl p-4 font-medium flex items-center justify-center gap-2 mt-4 transition-colors ${
+              submitted 
+                ? 'bg-[#e1ff00] text-[#1e1e1e]' 
+                : 'bg-[#2c2c2c] text-white'
+            }`}
           >
-            <Send className="w-4 h-4" />
-            Send Message
+            {submitted ? (
+              <>
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  className="w-4 h-4 rounded-full bg-[#1e1e1e]"
+                />
+                Message Sent!
+              </>
+            ) : (
+              <>
+                <Send className="w-4 h-4" />
+                Send Message
+              </>
+            )}
           </motion.button>
         </form>
       </div>

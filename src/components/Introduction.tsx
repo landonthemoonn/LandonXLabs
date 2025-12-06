@@ -10,7 +10,7 @@ export function Introduction() {
           transition={{ duration: 0.5 }}
           className="text-2xl md:text-3xl font-['Space_Grotesk',sans-serif] font-medium text-white mb-12 leading-relaxed"
         >
-          Landon x Labs combines creativity with technology, serving as a vibrant space for crafting smart applications, eye-catching visuals, and innovative interfaces.
+          LANDON x LABS fuses creativity with cutting-edge technology—a dynamic playground for building intelligent apps, stunning visuals, and next-level interfaces.
         </motion.p>
 
         <motion.div

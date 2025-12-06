@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { GlassCard } from "./ui/GlassCard";
 import LandonLabsLogo from "../imports/Group10";
-import { LandonLabsLogoCenter } from "./LandonLabsLogoCenter";
+import Frame1 from "../imports/Frame1";
 
 export function Hero() {
   return (
@@ -35,15 +35,15 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="relative w-[420px] h-[260px] scale-[0.6] sm:scale-75 md:scale-100 origin-center"
+            className="relative w-[420px] h-[200px] scale-[0.6] sm:scale-75 md:scale-100 origin-center"
           >
-            <LandonLabsLogoCenter />
+            <Frame1 />
           </motion.div>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-[-60px] sm:mt-[-40px] md:mt-[-20px] text-xs sm:text-sm md:text-base font-['Space_Grotesk',sans-serif] text-white tracking-[0.3em] uppercase"
+            className="mt-4 text-xs sm:text-sm md:text-base font-['Space_Grotesk',sans-serif] text-white tracking-[0.3em] uppercase"
           >
             experimental creative playground
           </motion.p>

@@ -3,18 +3,15 @@ import { useState, useEffect } from "react";
 import { useScrollSpy } from "../hooks/useScrollSpy";
 
 const navItems = [
-  { name: "APP LAB", href: "#app-lab", id: "app-lab" },
-  { name: "AI LAB", href: "#ai-lab", id: "ai-lab" },
-  { name: "PHOTO LAB", href: "#photo-lab", id: "photo-lab" },
   { name: "DESIGN LAB", href: "#design-lab", id: "design-lab" },
-  { name: "AUDIO LAB", href: "#audio-lab", id: "audio-lab" },
+  { name: "AI LAB", href: "#ai-lab", id: "ai-lab" },
   { name: "MIND LAB", href: "#mind-lab", id: "mind-lab" },
   { name: "CONTACT", href: "#contact", id: "contact" },
 ];
 
 export function Navbar() {
   const activeId = useScrollSpy(navItems.map(item => item.id), 150);
-  const [active, setActive] = useState("APP LAB");
+  const [active, setActive] = useState("DESIGN LAB");
 
   useEffect(() => {
     if (activeId) {
@@ -48,7 +45,7 @@ export function Navbar() {
             key={item.name}
             href={item.href}
             onClick={(e) => handleClick(e, item.href, item.name)}
-            className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+            className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${
               active === item.name
                 ? "bg-black text-white"
                 : "text-gray-600 hover:bg-gray-100"

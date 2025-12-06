@@ -1,4 +1,4 @@
-import { Brain, RefreshCw, Zap, Shuffle } from "lucide-react";
+import { Brain, RefreshCw, Zap, Shuffle, BookHeart, Layers } from "lucide-react";
 import { SectionHeader } from "./SectionHeader";
 import { LabCard } from "./LabCard";
 
@@ -25,6 +25,21 @@ const areas = [
   },
 ];
 
+const tools = [
+  {
+    title: "Piece of me",
+    description: "Mental health work book for personal growth.",
+    icon: <BookHeart className="w-full h-full" />,
+    url: "#",
+  },
+  {
+    title: "Regul8r",
+    description: "Regulate. Reset. Rise.",
+    icon: <Layers className="w-full h-full" />,
+    url: "#",
+  },
+];
+
 const researchList = [
   "Emotion recognition & sentiment analysis",
   "Habit formation & behavioral patterns",
@@ -48,12 +63,27 @@ export function MindLab() {
           description="The intersection of psychology, neuroscience, and technology. Understanding the human mind to build better tools for mental wellness and cognitive enhancement."
         />
         
+        {/* Areas of Study */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {areas.map((item, index) => (
             <LabCard key={index} {...item} />
           ))}
         </div>
 
+        {/* Tools & Apps */}
+        <div>
+           <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+            <span className="w-2 h-8 bg-[#e1ff00] rounded-full"></span>
+            Tools & Resources
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {tools.map((item, index) => (
+              <LabCard key={index} {...item} />
+            ))}
+          </div>
+        </div>
+
+        {/* Lists */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
             <h3 className="text-xl font-semibold text-white mb-6">Research Areas</h3>
@@ -68,7 +98,7 @@ export function MindLab() {
           </div>
           
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
-            <h3 className="text-xl font-semibold text-white mb-6">Applications</h3>
+            <h3 className="text-xl font-semibold text-white mb-6">Future Applications</h3>
             <ul className="space-y-4">
               {applicationsList.map((item, i) => (
                 <li key={i} className="flex items-start gap-3">

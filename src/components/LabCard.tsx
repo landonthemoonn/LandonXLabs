@@ -16,8 +16,9 @@ export function LabCard({ title, description, icon, url, className, onClick }: L
   return (
     <motion.div
       whileHover={{ scale: 1.05, y: -5 }}
+      whileTap={{ scale: 0.98 }}
       className={cn(
-        "bg-white/10 backdrop-blur-sm border border-white/10 p-6 rounded-2xl flex flex-col gap-4 relative group",
+        "bg-white/10 backdrop-blur-sm border border-white/10 p-6 rounded-2xl flex flex-col gap-4 relative group transition-all",
         className
       )}
       onClick={onClick}
