@@ -41,10 +41,18 @@ export function Navbar() {
     >
       <div className="bg-white/80 backdrop-blur-md border border-white/20 rounded-2xl p-2 pointer-events-auto shadow-lg flex flex-wrap justify-center gap-1 md:gap-2">
         {navItems.map((item) => (
-          <a
+          <motion.a
             key={item.name}
             href={item.href}
             onClick={(e) => handleClick(e, item.href, item.name)}
+            whileHover={{
+              scale: 1.05,
+              boxShadow: active === item.name
+                ? "0 0 20px rgba(0, 0, 0, 0.3)"
+                : "0 0 15px rgba(225, 255, 0, 0.2)"
+            }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 400, damping: 20 }}
             className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${
               active === item.name
                 ? "bg-black text-white"
@@ -52,7 +60,7 @@ export function Navbar() {
             }`}
           >
             {item.name}
-          </a>
+          </motion.a>
         ))}
       </div>
     </motion.nav>

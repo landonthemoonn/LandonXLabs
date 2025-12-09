@@ -171,8 +171,13 @@ export function DesignLab() {
             {principles.map((item, index) => (
               <motion.div
                 key={index}
-                whileHover={{ scale: 1.05 }}
-                className={`h-52 rounded-2xl bg-gradient-to-b ${item.bg} flex flex-col items-center justify-center gap-4 shadow-lg`}
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 0 30px rgba(225, 255, 0, 0.3), 0 10px 40px rgba(0, 0, 0, 0.2)"
+                }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className={`h-52 rounded-2xl bg-gradient-to-b ${item.bg} flex flex-col items-center justify-center gap-4 shadow-lg cursor-pointer`}
               >
                 {item.icon}
                 <h3 className={`text-lg font-medium ${item.textColor}`}>{item.title}</h3>

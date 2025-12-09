@@ -19,13 +19,25 @@ export function Introduction() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="flex flex-wrap justify-center gap-4"
         >
-          {["Web Development", "UI/UX Design", "Creative Strategy", "AI Integration", "Rapid Prototyping", "Digital Experiences"].map((tag) => (
-            <span
+          {["Web Development", "UI/UX Design", "Creative Strategy", "AI Integration", "Rapid Prototyping", "Digital Experiences"].map((tag, index) => (
+            <motion.span
               key={tag}
-              className="px-6 py-3 bg-[#303030] text-[#e1ff00] rounded-full text-sm font-bold tracking-wide shadow-lg"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              whileHover={{
+                scale: 1.1,
+                boxShadow: "0 0 20px rgba(225, 255, 0, 0.5)"
+              }}
+              whileTap={{ scale: 0.95 }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                delay: index * 0.1
+              }}
+              className="px-6 py-3 bg-[#303030] text-[#e1ff00] rounded-full text-sm font-bold tracking-wide shadow-lg cursor-pointer"
             >
               {tag}
-            </span>
+            </motion.span>
           ))}
         </motion.div>
       </div>

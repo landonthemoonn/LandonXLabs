@@ -15,10 +15,18 @@ interface LabCardProps {
 export function LabCard({ title, description, icon, url, className, onClick }: LabCardProps) {
   return (
     <motion.div
-      whileHover={{ scale: 1.05, y: -5 }}
-      whileTap={{ scale: 0.98 }}
+      whileHover={{
+        scale: 1.05,
+        y: -5,
+        boxShadow: "0 0 30px rgba(225, 255, 0, 0.3), 0 10px 40px rgba(0, 0, 0, 0.3)"
+      }}
+      whileTap={{
+        scale: 0.95,
+        boxShadow: "0 0 40px rgba(225, 255, 0, 0.5), 0 5px 20px rgba(0, 0, 0, 0.3)"
+      }}
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
       className={cn(
-        "bg-white/10 backdrop-blur-sm border border-white/10 p-6 rounded-2xl flex flex-col gap-4 relative group transition-all",
+        "bg-white/10 backdrop-blur-sm border border-white/10 p-6 rounded-2xl flex flex-col gap-4 relative group transition-all cursor-pointer",
         className
       )}
       onClick={onClick}
@@ -35,9 +43,16 @@ export function LabCard({ title, description, icon, url, className, onClick }: L
           <ExternalLink size={20} />
         </a>
       )}
-      <div className="w-12 h-12 text-[#e1ff00] mb-2">
+      <motion.div
+        className="w-12 h-12 text-[#e1ff00] mb-2"
+        whileHover={{
+          scale: 1.1,
+          filter: "drop-shadow(0 0 8px rgba(225, 255, 0, 0.8))"
+        }}
+        transition={{ type: "spring", stiffness: 400 }}
+      >
         {icon}
-      </div>
+      </motion.div>
       <h3 className="text-xl font-semibold text-white">{title}</h3>
       <p className="text-white/80 leading-relaxed">{description}</p>
     </motion.div>

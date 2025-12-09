@@ -81,11 +81,20 @@ export function Contact() {
           
           <motion.button
             type="submit"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
+            whileHover={{
+              scale: 1.05,
+              boxShadow: submitted
+                ? "0 0 30px rgba(225, 255, 0, 0.6)"
+                : "0 0 25px rgba(44, 44, 44, 0.5)"
+            }}
+            whileTap={{
+              scale: 0.95,
+              boxShadow: "0 0 40px rgba(225, 255, 0, 0.8)"
+            }}
+            transition={{ type: "spring", stiffness: 400, damping: 15 }}
             className={`rounded-xl p-4 font-medium flex items-center justify-center gap-2 mt-4 transition-colors ${
-              submitted 
-                ? 'bg-[#e1ff00] text-[#1e1e1e]' 
+              submitted
+                ? 'bg-[#e1ff00] text-[#1e1e1e]'
                 : 'bg-[#2c2c2c] text-white'
             }`}
           >
