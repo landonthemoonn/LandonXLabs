@@ -30,13 +30,11 @@ const tools = [
     title: "Piece of me",
     description: "Mental health work book for personal growth.",
     icon: <BookHeart className="w-full h-full" />,
-    url: "#",
   },
   {
     title: "Regul8r",
     description: "Regulate. Reset. Rise.",
     icon: <Layers className="w-full h-full" />,
-    url: "#",
   },
 ];
 

@@ -68,7 +68,6 @@ const apps: AppData[] = [
     title: "RM8 Dashboard",
     description: "Comprehensive household management platform for shared living spaces.",
     icon: <Home className="w-full h-full" />,
-    url: "#",
     details: (
       <div className="space-y-6 text-white/90">
         <div>
@@ -133,7 +132,6 @@ const apps: AppData[] = [
     title: "Canvasphere",
     description: "Create. Collaborate. Captivate.",
     icon: <Palette className="w-full h-full" />,
-    url: "#",
   },
 ];
 
