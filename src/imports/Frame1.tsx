@@ -296,10 +296,6 @@ function Group10() {
       <Group6 />
       <Group7 />
       <p className="absolute font-['Silkscreen:Regular',sans-serif] h-[66px] leading-[0.89] left-[calc(50%-163px)] not-italic text-[#ccbc88] text-[33px] top-[135px] w-[375px]">landon X labs</p>
-      <div className="absolute font-['Silkscreen:Regular',sans-serif] h-[54px] leading-[0.89] left-[calc(50%-0.5px)] not-italic text-[#ccbc88] text-[13px] text-center top-[184px] translate-x-[-50%] w-[423px]">
-        <p className="mb-0">{`experiments, prototypes & `}</p>
-        <p>creATIVE PLAYGROUND</p>
-      </div>
       <Group4 />
     </div>
   );
